@@ -3,7 +3,7 @@ require_relative "captcha.rb"
 
 class TestCaptcha < Minitest::Test
   def setup
-    @input = Captcha.read('puzzle_input.txt')
+    @input = Captcha.read('puzzle_input.txt').strip
     @input_array = @input.split('')
   end
 
@@ -17,6 +17,11 @@ class TestCaptcha < Minitest::Test
 
   def test_input_is_string
     assert_kind_of String, @input
+  end
+
+  def test_input_is_all_int
+    number = @input.to_i
+    assert_equal @input.length, number.digits.length
   end
 
   def test_input_can_split_to_array
