@@ -1,8 +1,9 @@
-puts "Enter your number:"
-print ">>"
-number = gets.chomp
+input = File.read("puzzle_input")
 
-number_array = number.split('')
+number_array_1 = []
+number_array_2 = []
+number_array_3 = []
+
 
 sum = 0
 
