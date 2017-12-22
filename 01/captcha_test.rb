@@ -4,7 +4,7 @@ require_relative "captcha.rb"
 class TestCaptcha < Minitest::Test
   def setup
     @input = Captcha.read('puzzle_input.txt').strip
-    @input_array = @input.split('')
+    @input_array = @input.chars.map(&:to_i)
   end
 
   def test_file_exists
