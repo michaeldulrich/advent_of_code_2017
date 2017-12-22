@@ -16,14 +16,14 @@ class TestCaptcha < Minitest::Test
   end
 
   def test_input_is_string
-    assert @input.is_a?(String)
+    assert_kind_of String, @input
   end
 
   def test_input_can_split_to_array
-    assert @input_array.is_a?(Array)
+    assert_kind_of Array, @input_array
   end
 
   def test_string_and_array_are_same_length
-    assert @input.length == @input_array.length
+    assert_equal @input.length, @input_array.length
   end
 end
