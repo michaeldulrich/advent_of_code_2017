@@ -7,19 +7,22 @@ class TestCaptcha < Minitest::Test
     @input_array = @input.chars.map(&:to_i)
   end
 
+=begin
+  ###these tests are really just for my learning purposes.
   def test_file_exists
-    assert Captcha.file?('puzzle_input.txt') == true
+    assert Captcha.file?('puzzle_input.txt')
   end
 
   def test_file_is_readable
-    assert Captcha.readable?('puzzle_input.txt') == true
+    assert Captcha.readable?('puzzle_input.txt')
   end
+=end
 
   def test_input_is_string
     assert_kind_of String, @input
   end
 
-  def test_input_is_all_int
+  def test_input_is_all_numbers
     number = @input.to_i
     assert_equal @input.length, number.digits.length
   end
