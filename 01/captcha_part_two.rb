@@ -1,14 +1,16 @@
-class Captcha < File
-  input = Captcha.read('puzzle_input.txt').strip.chars.map(&:to_i)
-  sum = 0
+input = File.read('puzzle_input.txt').strip.chars.map(&:to_i)
+sum = 0
 
-  input.each_with_index do |x, i|
-    next_item = input.[i + input.length/2]
-    if x == next_item
-      sum += x
-    end
+input.each_with_index do |x, i|
+  if i < input.length/2
+    next_item =  input[i + input.length/2]
+  else
+    next_item = input[i - input.length/2]
   end
 
-  puts sum
-
+  if x == next_item
+    sum += x
+  end
 end
+
+puts sum
