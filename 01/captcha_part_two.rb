@@ -3,14 +3,10 @@ class Captcha < File
   sum = 0
 
   input.each_with_index do |x, i|
-    next_item = input[i+1]
+    next_item = input.[i + input.length/2]
     if x == next_item
       sum += x
     end
-  end
-
-  if input.first == input.last
-    sum += input.first
   end
 
   puts sum
