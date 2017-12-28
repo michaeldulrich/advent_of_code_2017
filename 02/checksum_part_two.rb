@@ -6,7 +6,6 @@ input.each_line do |line|
   new_array.permutation(2) do |a, b|
     if a % b == 0
       value = a / b
-      puts value
       sum += value
     end
   end
