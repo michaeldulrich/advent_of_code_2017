@@ -6,7 +6,6 @@ input.each do |line|
   if word.uniq == word
     valid_passphrases += 1
   end
-# end
 end
 
 puts valid_passphrases
